@@ -251,6 +251,19 @@ document.addEventListener('DOMContentLoaded', () => {
         cartItemsWrap.querySelectorAll('.remove-btn').forEach(btn => {
             btn.addEventListener('click', () => removeFromCart(btn.dataset.id));
         });
+
+        // Synchronize Shop Add-to-Cart buttons so "Added!" stays active and never fades out
+        document.querySelectorAll('.add').forEach(btn => {
+            const productId = btn.dataset.productId;
+            const inCart = cart.find(item => item.id === productId);
+            if (inCart && inCart.quantity > 0) {
+                btn.classList.add('added');
+                btn.innerHTML = inCart.quantity > 1 ? `Added (${inCart.quantity})! ✓` : 'Added! ✓';
+            } else {
+                btn.classList.remove('added');
+                btn.innerHTML = 'Add to cart';
+            }
+        });
     }
 
     // -------------------------------------------------------------------------
@@ -291,15 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!productId) return;
 
             addToCart(productId);
-
-            // Animate button feedback
-            const originalText = btn.innerHTML;
-            btn.classList.add('added');
-            btn.innerHTML = 'Added! ✓';
-            setTimeout(() => {
-                btn.classList.remove('added');
-                btn.innerHTML = originalText;
-            }, 1200);
+            // State is preserved permanently via renderCart() without fading out
         });
     });
 
@@ -456,14 +461,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.querySelector('.hero');
 
     if (jar3dBody && jarShadow) {
-        // Flag to toggle animation (set to false to freeze completely for screenshots)
-        let jarAnimationEnabled = false;
-
-        // Apply clean resting position immediately
-        jar3dBody.style.transform = 'translate3d(0, 0, 0) rotate(3deg) scale3d(1, 1, 1)';
-        jarShadow.style.transform = 'translate3d(0, 0, 0) scale(1)';
-        jarShadow.style.opacity = '0.38';
-
         // Physics State Variables
         let current = {
             translateY: 0,
@@ -484,26 +481,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let scrollVelocity = 0;
         let clickImpulse = 0;
 
-        // Press 'P' to easily toggle freeze / resume animation
-        document.addEventListener('keydown', (e) => {
-            if ((e.key === 'p' || e.key === 'P') && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
-                jarAnimationEnabled = !jarAnimationEnabled;
-                if (jarAnimationEnabled) {
-                    showToast('Honey jar animation resumed ▶', 'info');
-                    requestAnimationFrame(animateJar);
-                } else {
-                    jar3dBody.style.transform = 'translate3d(0, 0, 0) rotate(3deg) scale3d(1, 1, 1)';
-                    jarShadow.style.transform = 'translate3d(0, 0, 0) scale(1)';
-                    jarShadow.style.opacity = '0.38';
-                    showToast('Honey jar animation frozen ⏸ (Ready for screenshot)', 'info');
-                }
-            }
-        });
-
         // Listen for scroll velocity and direction
         window.addEventListener('scroll', () => {
-            if (!jarAnimationEnabled) return;
-
             const now = performance.now();
             const dt = Math.max(10, now - lastScrollTime);
             const currentScrollY = window.scrollY;
@@ -520,7 +499,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Mouse Parallax across the Hero area
         if (heroSection) {
             heroSection.addEventListener('mousemove', (e) => {
-                if (!jarAnimationEnabled) return;
                 const rect = heroSection.getBoundingClientRect();
                 const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
                 const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
@@ -536,7 +514,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Tap / Click 3D "Boing" Pop Reaction
         function triggerJarPop() {
-            if (!jarAnimationEnabled) return;
             clickImpulse = 1.0;
             showToast('100% Raw Wildflower Honey – Straight from hive #14! 🍯', 'info');
         }
@@ -551,13 +528,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Main Animation Render Loop
         function animateJar(time) {
-            if (!jarAnimationEnabled) {
-                jar3dBody.style.transform = 'translate3d(0, 0, 0) rotate(3deg) scale3d(1, 1, 1)';
-                jarShadow.style.transform = 'translate3d(0, 0, 0) scale(1)';
-                jarShadow.style.opacity = '0.38';
-                return;
-            }
-
             // Smoothly decay velocity towards 0
             scrollVelocity *= 0.88;
             if (Math.abs(scrollVelocity) < 0.005) scrollVelocity = 0;

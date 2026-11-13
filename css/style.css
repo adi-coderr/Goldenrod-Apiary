@@ -594,6 +594,13 @@ h2 {
     border-color: #2E7D32 !important;
 }
 
+.add.added:hover {
+    background: #1B5E20 !important;
+    border-color: #1B5E20 !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
 .a1 {
     --bg: #FFE6A0;
     --tx: #2B1A0C;
