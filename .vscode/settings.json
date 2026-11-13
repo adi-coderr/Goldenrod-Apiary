@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.html": "html"
+    },
+    "livePreview.defaultPreviewPath": "/index.html",
+    "livePreview.portNumber": 3000,
+    "livePreview.openPreviewTarget": "ExternalBrowser"
+}
+

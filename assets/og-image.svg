@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bgGlow" cx="70%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#FFD461" />
+      <stop offset="60%" stop-color="#F0A818" />
+      <stop offset="100%" stop-color="#C97A06" />
+    </radialGradient>
+    <linearGradient id="jarG" x1="0" x2="1">
+      <stop offset="0%" stop-color="#FFC947" />
+      <stop offset="55%" stop-color="#E8930C" />
+      <stop offset="100%" stop-color="#B86A04" />
+    </linearGradient>
+    <linearGradient id="lidG" x1="0" x2="1">
+      <stop offset="0%" stop-color="#4A2C12" />
+      <stop offset="50%" stop-color="#6B4220" />
+      <stop offset="100%" stop-color="#34200D" />
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="25" stdDeviation="20" flood-color="#4E2700" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGlow)" />
+
+  <!-- Ambient Honeycomb Hexagons -->
+  <polygon points="110,60 170,95 170,165 110,200 50,165 50,95" fill="#FFFFFF" opacity="0.12" />
+  <polygon points="560,40 600,63 600,109 560,132 520,109 520,63" fill="#FFFFFF" opacity="0.14" />
+  <polygon points="1050,480 1130,526 1130,618 1050,664 970,618 970,526" fill="#FFFFFF" opacity="0.10" />
+
+  <!-- Brand Header -->
+  <g transform="translate(90, 80)">
+    <polygon points="18,2 32,10 32,27 18,35 4,27 4,10" fill="#2B1A0C" />
+    <text x="46" y="26" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="28" fill="#2B1A0C" letter-spacing="-0.5">Goldenrod Apiary</text>
+  </g>
+
+  <!-- Headline & Subtitle -->
+  <g transform="translate(90, 200)">
+    <text x="0" y="50" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="62" fill="#2B1A0C" letter-spacing="-1.5">Honey from hives</text>
+    <text x="0" y="118" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="62" fill="#2B1A0C" letter-spacing="-1.5">we know by name.</text>
+
+    <text x="0" y="195" font-family="Georgia, serif" font-size="26" fill="#3D2614" max-width="500">
+      Small-batch raw honey, strained once and jarred
+    </text>
+    <text x="0" y="235" font-family="Georgia, serif" font-size="26" fill="#3D2614">
+      the week it is harvested. Pure, unheated &amp; unfiltered.
+    </text>
+
+    <!-- Pill Tag -->
+    <rect x="0" y="280" width="220" height="52" rx="26" fill="#2B1A0C" />
+    <text x="110" y="313" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="18" fill="#FFF1C2">Shop The Harvest</text>
+  </g>
+
+  <!-- Jar Illustration Right Side -->
+  <g transform="translate(780, 110) rotate(4)" filter="url(#softShadow)">
+    <rect x="78" y="18" width="144" height="52" rx="12" fill="url(#lidG)" />
+    <rect x="84" y="62" width="132" height="14" rx="4" fill="#34200D" />
+    <path d="M58 84h184c20 0 30 10 30 30v206c0 34-22 50-52 50H80c-30 0-52-16-52-50V114c0-20 10-30 30-30z" fill="url(#jarG)" />
+    <rect x="46" y="110" width="14" height="230" rx="7" fill="#fff" opacity=".28" />
+    <rect x="70" y="170" width="160" height="136" rx="10" fill="#FFF1C2" />
+    <text x="150" y="214" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="22" fill="#2B1A0C">Goldenrod</text>
+    <text x="150" y="238" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="22" fill="#2B1A0C">Apiary</text>
+    <polygon points="150,250 162,257 162,271 150,278 138,271 138,257" fill="#F0A818" />
+    <text x="150" y="297" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#2B1A0C">Wildflower honey, 340 g</text>
+  </g>
+</svg>
+

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Goldenrod Apiary – Raw small-batch honey</title>
+    <meta name="description"
+        content="Small-batch raw honey, strained once and jarred the week it is harvested from hives we know by name. Pure, unheated & unfiltered.">
+    <meta name="theme-color" content="#F0A818">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://goldenrodapiary.com/">
+    <meta property="og:title" content="Goldenrod Apiary – Raw small-batch honey">
+    <meta property="og:description"
+        content="Small-batch raw honey, strained once and jarred the week it is harvested from hives we know by name.">
+    <meta property="og:image" content="assets/og-image.svg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Goldenrod Apiary – Raw small-batch honey">
+    <meta name="twitter:description"
+        content="Small-batch raw honey, strained once and jarred the week it is harvested from hives we know by name.">
+    <meta name="twitter:image" content="assets/og-image.svg">
+
+    <!-- Favicon & Manifest -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/favicon.svg">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- SVG Definitions & Reusable Symbols -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <filter id="goo" x="-5%" y="-5%" width="110%" height="125%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b" />
+                <feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" />
+            </filter>
+            <symbol id="jar" viewBox="0 0 120 150">
+                <rect x="30" y="4" width="60" height="22" rx="5" fill="#2B1A0C" />
+                <path d="M22 34h76c10 0 14 5 14 14v82c0 14-9 20-22 20H30c-13 0-22-6-22-20V48c0-9 4-14 14-14z"
+                    fill="currentColor" />
+                <rect x="18" y="46" width="7" height="86" rx="3.5" fill="#fff" opacity=".28" />
+                <rect x="34" y="66" width="52" height="50" rx="5" fill="#FFF1C2" opacity=".95" />
+                <polygon points="60,80 69,85 69,95 60,100 51,95 51,85" fill="#F0A818" />
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- Header & Hero Section -->
+    <header class="hero">
+        <div class="hexes" aria-hidden="true">
+            <span class="hex" style="--s:150px;left:-30px;top:240px"></span>
+            <span class="hex" style="--s:90px;left:42%;top:70px"></span>
+            <span class="hex" style="--s:210px;right:-50px;top:-40px"></span>
+        </div>
+
+        <div class="header-wrap">
+            <nav class="nav" aria-label="Main Navigation">
+                <a class="brand" href="#" aria-label="Goldenrod Apiary Home">
+                    <svg width="26" height="28" viewBox="0 0 24 26" aria-hidden="true">
+                        <polygon points="12,1 22,6.5 22,19.5 12,25 2,19.5 2,6.5" fill="#2B1A0C" />
+                    </svg>
+                    Goldenrod Apiary
+                </a>
+                <ul>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#story">Our bees</a></li>
+                    <li><a href="#join">Harvest dates</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="cart" id="cart-btn" type="button" aria-label="Open Cart">
+                        Cart
+                        <span class="cart-count" id="cart-badge">0</span>
+                    </button>
+                    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation menu"
+                        aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Fullscreen Mobile Navigation Drawer -->
+        <div class="mobile-nav" id="mobile-nav">
+            <ul>
+                <li><a href="#shop">Shop Harvests</a></li>
+                <li><a href="#story">Our Bees &amp; Hives</a></li>
+                <li><a href="#join">Harvest Dates</a></li>
+            </ul>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-main">
+            <div class="hero-text">
+                <h1>Honey from hives we know by name.</h1>
+                <p class="lede">Small-batch raw honey, strained once and jarred the week it is harvested.</p>
+                <div class="actions">
+                    <a class="btn" href="#shop">Shop the harvest</a>
+                    <a class="link" href="#story">See how we make it</a>
+                </div>
+            </div>
+            <div class="jar-wrap" id="jar-wrap">
+                <div class="jar-3d-stage">
+                    <div class="jar-3d-shadow" id="jar-shadow"></div>
+                    <div class="jar-3d-body" id="jar-3d-body" role="button" tabindex="0" aria-label="Interactive 3D honey jar">
+                        <svg class="jar" id="hero-jar" viewBox="0 0 300 380" role="img" aria-label="A jar of wildflower honey">
+                            <defs>
+                                <linearGradient id="gh" x1="0" x2="1">
+                                    <stop offset="0" stop-color="#FFC947" />
+                                    <stop offset=".55" stop-color="#E8930C" />
+                                    <stop offset="1" stop-color="#B86A04" />
+                                </linearGradient>
+                                <linearGradient id="gl" x1="0" x2="1">
+                                    <stop offset="0" stop-color="#4A2C12" />
+                                    <stop offset=".5" stop-color="#6B4220" />
+                                    <stop offset="1" stop-color="#34200D" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="78" y="18" width="144" height="52" rx="12" fill="url(#gl)" />
+                            <rect x="84" y="62" width="132" height="14" rx="4" fill="#34200D" />
+                            <path
+                                d="M58 84h184c20 0 30 10 30 30v206c0 34-22 50-52 50H80c-30 0-52-16-52-50V114c0-20 10-30 30-30z"
+                                fill="url(#gh)" />
+                            <rect x="46" y="110" width="14" height="230" rx="7" fill="#fff" opacity=".28" />
+                            <rect x="70" y="170" width="160" height="136" rx="10" fill="#FFF1C2" />
+                            <text x="150" y="212" text-anchor="middle" font-family="'Bricolage Grotesque',Arial,sans-serif"
+                                font-weight="800" font-size="21" fill="#2B1A0C">Goldenrod</text>
+                            <text x="150" y="235" text-anchor="middle" font-family="'Bricolage Grotesque',Arial,sans-serif"
+                                font-weight="800" font-size="21" fill="#2B1A0C">Apiary</text>
+                            <polygon points="150,247 162,254 162,268 150,275 138,268 138,254" fill="#F0A818" />
+                            <text x="150" y="296" text-anchor="middle" font-family="Newsreader,Georgia,serif" font-size="12.5"
+                                fill="#2B1A0C">Wildflower honey, 340 g</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Goo Drips Animation -->
+        <svg class="drips" viewBox="0 0 1440 150" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+            <g filter="url(#goo)" fill="#F0A818">
+                <g class="flow">
+                    <rect x="0" y="0" width="1440" height="26" />
+                    <rect x="108" y="0" width="26" height="70" rx="13" />
+                    <rect x="300" y="0" width="20" height="105" rx="10" />
+                    <circle cx="310" cy="130" r="9" />
+                    <rect x="520" y="0" width="30" height="55" rx="15" />
+                    <rect x="760" y="0" width="24" height="92" rx="12" />
+                    <circle cx="772" cy="119" r="7" />
+                    <rect x="980" y="0" width="32" height="64" rx="16" />
+                    <rect x="1180" y="0" width="22" height="115" rx="11" />
+                    <circle cx="1191" cy="138" r="8" />
+                    <rect x="1350" y="0" width="26" height="48" rx="13" />
+                </g>
+            </g>
+        </svg>
+    </header>
+
+    <main>
+        <!-- Shop Section -->
+        <section class="shop" id="shop">
+            <div class="shop-head">
+                <h2>This season's harvests</h2>
+                <p>Three jars, three seasons. The same bees, working different flowers.</p>
+            </div>
+            <div class="arches">
+                <article class="arch a1">
+                    <svg viewBox="0 0 120 150" aria-hidden="true">
+                        <use href="#jar" />
+                    </svg>
+                    <h3>Wildflower</h3>
+                    <p>Golden and floral, with a mild citrus finish.</p>
+                    <p class="meta">340 g jar, ₹449</p>
+                    <button class="add" type="button" data-product-id="wildflower">Add to cart</button>
+                </article>
+                <article class="arch a2">
+                    <svg viewBox="0 0 120 150" aria-hidden="true">
+                        <use href="#jar" />
+                    </svg>
+                    <h3>Acacia</h3>
+                    <p>Pale and clear, light on the tongue, and slow to set.</p>
+                    <p class="meta">340 g jar, ₹529</p>
+                    <button class="add" type="button" data-product-id="acacia">Add to cart</button>
+                </article>
+                <article class="arch a3">
+                    <svg viewBox="0 0 120 150" aria-hidden="true">
+                        <use href="#jar" />
+                    </svg>
+                    <h3>Forest</h3>
+                    <p>Dark and malty, with a long, savory finish.</p>
+                    <p class="meta">340 g jar, ₹599</p>
+                    <button class="add" type="button" data-product-id="forest">Add to cart</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="story" id="story">
+            <div class="story-in">
+                <h2>Strained once. Never heated.</h2>
+                <ul class="facts">
+                    <li>
+                        <div>
+                            <h3>One strain, through muslin</h3>
+                            <p>Pollen and tiny bits of wax stay in the jar, which is why it tastes like the field.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Jarred within a week</h3>
+                            <p>We fill jars the same week we harvest, so nothing waits in a warehouse.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Every jar has an apiary</h3>
+                            <p>The label tells you which hives your honey came from and when it was taken.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="foot" id="join">
+        <div class="foot-in">
+            <h2>Get harvest dates in your inbox.</h2>
+            <form class="signup" id="newsletter-form">
+                <label class="sr" for="em">Email address</label>
+                <input id="em" type="email" placeholder="Your email address" autocomplete="email" required>
+                <button class="btn" type="submit">Join the list</button>
+            </form>
+        </div>
+        <div class="fine">
+            <span>© 2026 Goldenrod Apiary. Raw honey is not suitable for infants under one year.</span>
+            <span>Harvested with care &amp; respect for the hive.</span>
+        </div>
+    </footer>
+
+    <!-- Slide-over Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+        <div class="cart-drawer-header">
+            <h3><span>🍯</span> Your Basket</h3>
+            <button class="close-btn" id="cart-close-btn" type="button" aria-label="Close cart">&times;</button>
+        </div>
+
+        <div class="shipping-banner">
+            <span id="shipping-progress-text">Add ₹1,000 for free shipping</span>
+            <div class="shipping-bar-bg">
+                <div class="shipping-bar-fill" id="shipping-bar-fill"></div>
+            </div>
+        </div>
+
+        <div class="cart-items-wrap" id="cart-items-wrap">
+            <!-- Dynamic Cart Items injected via JS -->
+        </div>
+
+        <div class="cart-drawer-footer">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">₹0</span>
+            </div>
+            <div class="summary-row">
+                <span>Standard Shipping</span>
+                <span id="cart-shipping">₹0</span>
+            </div>
+            <div class="summary-row total-row">
+                <span>Total</span>
+                <span id="cart-total">₹0</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn" type="button">
+                <span>Proceed to Checkout</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Checkout Success Modal -->
+    <div class="modal-overlay" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-card">
+            <div class="modal-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2B1A0C" stroke-width="2.8">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
+            </div>
+            <h3 id="modal-title">Harvest on the way!</h3>
+            <p>Thank you for supporting small-batch beekeeping. Your jars are being wrapped with care and will dispatch within 48 hours.</p>
+            <button class="btn" id="modal-close-btn" type="button">Back to the Apiary</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+    <!-- Application Script -->
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>

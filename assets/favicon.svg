@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="honeyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD461" />
+      <stop offset="50%" stop-color="#F0A818" />
+      <stop offset="100%" stop-color="#C97A06" />
+    </linearGradient>
+    <linearGradient id="lidGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4A2C12" />
+      <stop offset="100%" stop-color="#2B1A0C" />
+    </linearGradient>
+  </defs>
+
+  <!-- Hexagonal background badge -->
+  <polygon points="32,2 58,17 58,47 32,62 6,47 6,17" fill="#2B1A0C" stroke="#F0A818" stroke-width="2.5" />
+
+  <!-- Inner Honeycomb Amber Core -->
+  <polygon points="32,8 52,19.5 52,44.5 32,56 12,44.5 12,19.5" fill="url(#honeyGrad)" opacity="0.95" />
+
+  <!-- Honey Jar Silhouette -->
+  <!-- Jar Lid -->
+  <rect x="22" y="19" width="20" height="6" rx="2" fill="url(#lidGrad)" />
+  <rect x="24" y="24" width="16" height="2" rx="1" fill="#1F1308" />
+
+  <!-- Jar Body -->
+  <path d="M19 26 h26 c2.5 0 4 1.5 4 4 v14 c0 4.5 -3 7 -7 7 H22 c-4 0 -7 -2.5 -7 -7 V30 c0 -2.5 1.5 -4 4 -4 z" fill="#FFF1C2" />
+
+  <!-- Golden Label & Comb Accent -->
+  <rect x="23" y="30" width="18" height="12" rx="2" fill="#F0A818" />
+  <polygon points="32,33 36,35.5 36,39.5 32,42 28,39.5 28,35.5" fill="#2B1A0C" />
+</svg>
+
