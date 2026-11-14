@@ -9,6 +9,59 @@ A modern, high-performance static webpage UI for **Goldenrod Apiary**, an artisa
 
 ---
 
+## 🚀 Quick Start / How to Run
+
+This project is built with **zero dependencies** (pure Vanilla HTML5, CSS3, and modern ES6 JavaScript). There are **no build steps, no compilers, and no `npm install` needed**—it runs immediately out of the box!
+
+### Method 1: Local HTTP Server with Python (Recommended)
+Running through a local web server ensures all SVG matrix filters, web fonts, and assets load smoothly without local file CORS restrictions:
+
+```bash
+# 1. Open your terminal in this project folder
+cd /path/to/HoneyBrand
+
+# 2. Start a local server (Python 3)
+python3 -m http.server 3000
+```
+Open **[http://localhost:3000](http://localhost:3000)** in your browser.
+
+---
+
+### Method 2: VS Code Live Server Extension
+1. Open this folder in **VS Code**.
+2. Install the **Live Server** extension (`ritwickdey.liveserver`) if not already installed.
+3. Right-click [`index.html`](file:///Users/adi/HoneyBrand/index.html) in the file explorer and select **"Open with Live Server"**.
+4. The page will open automatically at `http://127.0.0.1:5500`.
+
+---
+
+### Method 3: Instant Browser Open (Direct File)
+You can directly open the file in your default browser:
+
+- **macOS:**
+  ```bash
+  open index.html
+  ```
+- **Windows:**
+  ```bash
+  start index.html
+  ```
+- **Linux:**
+  ```bash
+  xdg-open index.html
+  ```
+*Or simply double-click `index.html` in Finder / File Explorer.*
+
+---
+
+### Method 4: Node.js `npx serve`
+If you have Node.js installed:
+```bash
+npx serve .
+```
+
+---
+
 ## 📁 Project Structure
 
 ```text
@@ -79,30 +132,6 @@ The interface is inspired by raw unfiltered wildflower honey, beeswax, and natur
   - Open Graph and Twitter Card tags.
   - Favicon and Web App Manifest configured.
   - `robots.txt` and `sitemap.xml` included.
-
----
-
-## 🚀 How to Run Locally
-
-Because this project is built with clean vanilla HTML5, CSS3, and modern JavaScript, no build tools or package managers are required.
-
-### Option 1: Direct File Open
-Double click `index.html` in your file explorer, or open it directly in any modern browser:
-```bash
-open index.html
-```
-
-### Option 2: Python Built-in Server (Recommended)
-Run a local HTTP server using Python 3:
-```bash
-python3 -m http.server 8000
-```
-Then visit [http://localhost:8000](http://localhost:8000) in your browser.
-
-### Option 3: Node `npx serve`
-```bash
-npx serve .
-```
 
 ---
 
